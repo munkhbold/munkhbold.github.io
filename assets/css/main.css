@@ -81,10 +81,18 @@ html, body {
   height: 100%;
   overflow-x: hidden;
   width: 100%; }
-  @media screen and (max-height: 640px) {
+  @media screen and (max-height: 840px) and (min-width: 640px){
     html, body {
       height: auto;
       min-height: 100%; } }
+
+  @media screen and (max-width: 640px) {
+    html, body {
+      height: auto;
+      max-height: 2100px;
+      /* min-height: 100%; */
+    } 
+  }
 
 body {
   display: -moz-flex;
@@ -879,7 +887,14 @@ button,
     #footer {
       bottom: 1.25em;
       left: 1.25em; } }
-  @media screen and (max-height: 640px) {
+  @media screen and (max-height: 840px) and (min-width: 640px) {
+    #footer {
+      bottom: auto;
+      left: auto;
+      margin: 1em 0 0 0;
+      position: relative; } }
+
+  @media screen and (max-width: 640px) {
     #footer {
       bottom: auto;
       left: auto;
@@ -889,7 +904,7 @@ button,
 .info {
   display: flex;
   flex-flow: row wrap;
-  gap: 150px;
+  gap: 160px;
   margin-top: 50px;
 }
 
@@ -914,4 +929,8 @@ button,
 #header .say-hi {
   font-weight: lighter;
   color: rgba(255, 255, 255, 0.5);
+}
+
+#footer {
+  margin-bottom: 20px;
 }
